@@ -1,6 +1,12 @@
+
+function selectUsers(genero){   
+
 var display = document.getElementById('display');
 
-fetch("https://randomuser.me/api?gender=female&&results=10")
+ // borro el lienzo
+ display.innerHTML= '';
+
+fetch("https://randomuser.me/api?gender="+genero+"&&results=10")
     .then(function (response) {
         return response.json();
     }).then(function (data) {
@@ -30,4 +36,6 @@ fetch("https://randomuser.me/api?gender=female&&results=10")
     }).catch(function (err) {
         console.log(err);
     })
+
+}
     
